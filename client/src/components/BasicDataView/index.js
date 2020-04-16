@@ -8,4 +8,3 @@ const BasicDataView = () => {
   );
 };
 export default BasicDataView;
-

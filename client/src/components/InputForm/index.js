@@ -1,9 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { showBasicData } from "../../actions/showBasicData";
 
 const InputForm = () => {
+  const dispatch = useDispatch();
   return (
     <div>
-      <button>submit</button>
+      <button onClick={()=> dispatch(showBasicData())}>submit</button>
     </div>
   );
 };

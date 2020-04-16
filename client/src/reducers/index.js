@@ -4,9 +4,9 @@ import savedReducer from './saved';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
-    basicDataReducer,
-    fiveDayReducer,
-    savedReducer
+    basicData: basicDataReducer,
+    fiveDay : fiveDayReducer,
+    saved: savedReducer
 });
 
 export default rootReducer;

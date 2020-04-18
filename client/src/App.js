@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import InputForm from "./components/InputForm/";
 import BasicDataView from "./components/BasicDataView/";
 import FiveDayView from "./components/FiveDayView/";
-import { Container } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 function App() {
   const basicData = useSelector((state) => state.basicData);
@@ -12,8 +12,14 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <InputForm />
-        {basicData ? <BasicDataView /> : " "}
+        <Row>
+        <Col md={6} sm={12}>
+          <InputForm />
+        </Col>
+        <Col md={6} sm={12}>
+          {basicData ? <BasicDataView /> : " "}
+        </Col>
+        </Row>
         {fiveDay ? <FiveDayView /> : " "}
       </Container>
     </div>

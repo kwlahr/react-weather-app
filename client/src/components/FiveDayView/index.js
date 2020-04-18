@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Card,
+  CardHeader,
   CardTitle,
   CardBody,
   Button,
@@ -16,36 +17,45 @@ import { hideFiveDay } from "../../actions/hideFiveDay";
 const FiveDayView = () => {
   const dispatch = useDispatch();
   return (
-    <div className="col-sm-12 col-md-6 offset-md-3">
+    <div>
       <Container
         color="light-gray"
-        className="col-sm-12 col-md-6 offset-md-3"
         style={{
           border: "solid 2px ",
           marginTop: "3rem",
           padding: "1rem",
-          width: "40rem",
         }}
       >
         <Card>
-          <CardBody>
+          <CardHeader>
             <Row>
-              <Col className="col-md-6">
-                <CardTitle>Searched Location</CardTitle>
+              <Col>
+                <CardTitle>
+                  <h3>Searched Location</h3>
+                </CardTitle>
               </Col>
-              <Col className="col-md-6">
-                <Button onClick={() => dispatch(hideFiveDay())}>x</Button>
+              <Col>
+                <Button
+                  style={{ float: "right" }}
+                  onClick={() => dispatch(hideFiveDay())}
+                >
+                  x
+                </Button>
               </Col>
             </Row>
+          </CardHeader>
+          <CardBody>
             {/* For Each statement with templated list here */}
             <ListGroup horizontal="lg">
-              <ListGroupItem>Sunday</ListGroupItem>
-              <ListGroupItem>Monday</ListGroupItem>
-              <ListGroupItem>Tuesday</ListGroupItem>
-              <ListGroupItem>Wednesday </ListGroupItem>
-              <ListGroupItem>Thursday</ListGroupItem>
-              <ListGroupItem>Friday</ListGroupItem>
-              <ListGroupItem>Saturday</ListGroupItem>
+              <ListGroupItem style={{ margin: "1rem" }}>Sunday</ListGroupItem>
+              <ListGroupItem style={{ margin: "1rem" }}>Monday</ListGroupItem>
+              <ListGroupItem style={{ margin: "1rem" }}>Tuesday</ListGroupItem>
+              <ListGroupItem style={{ margin: "1rem" }}>
+                Wednesday{" "}
+              </ListGroupItem>
+              <ListGroupItem style={{ margin: "1rem" }}>Thursday</ListGroupItem>
+              <ListGroupItem style={{ margin: "1rem" }}>Friday</ListGroupItem>
+              <ListGroupItem style={{ margin: "1rem" }}>Saturday</ListGroupItem>
             </ListGroup>
           </CardBody>
         </Card>

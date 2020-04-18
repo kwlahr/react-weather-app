@@ -17,25 +17,23 @@ import { showFiveDay } from "../../actions/showFiveDay";
 const BasicDataView = () => {
   const dispatch = useDispatch();
   return (
-    <div className="col-sm-12 col-md-6 offset-md-3">
+    <div>
       <Container
         color="light-gray"
-        className="col-sm-12 col-md-6 offset-md-3"
         style={{
           border: "solid 2px ",
           marginTop: "3rem",
           padding: "1rem",
-          width: "40rem",
         }}
       >
         <Card>
           <CardHeader>
             <Row>
-              <Col className="col-md-6">
-                <CardTitle>Searched Location</CardTitle>
+              <Col>
+                <CardTitle><h3>Searched Location</h3></CardTitle>
               </Col>
-              <Col className="col-md-6">
-                <Button onClick={() => dispatch(hideBasicData())}>x</Button>
+              <Col>
+                <Button style={{float: "right"}} onClick={() => dispatch(hideBasicData())}>x</Button>
               </Col>
             </Row>
           </CardHeader>

@@ -1,20 +1,19 @@
 import React from "react";
 import {
   Card,
-  CardHeader,
   CardTitle,
   CardBody,
-  CardText,
   Button,
   Container,
   Row,
   Col,
+  ListGroup,
+  ListGroupItem,
 } from "reactstrap";
 import { useDispatch } from "react-redux";
-import { hideBasicData } from "../../actions/hideBasicData";
-import { showFiveDay } from "../../actions/showFiveDay";
+import { hideFiveDay } from "../../actions/hideFiveDay";
 
-const BasicDataView = () => {
+const FiveDayView = () => {
   const dispatch = useDispatch();
   return (
     <div className="col-sm-12 col-md-6 offset-md-3">
@@ -29,26 +28,29 @@ const BasicDataView = () => {
         }}
       >
         <Card>
-          <CardHeader>
+          <CardBody>
             <Row>
               <Col className="col-md-6">
                 <CardTitle>Searched Location</CardTitle>
               </Col>
               <Col className="col-md-6">
-                <Button onClick={() => dispatch(hideBasicData())}>x</Button>
+                <Button onClick={() => dispatch(hideFiveDay())}>x</Button>
               </Col>
             </Row>
-          </CardHeader>
-          <CardBody>
-            <CardText>Current Temp: </CardText>
-            <CardText>High: </CardText>
-            <CardText>Low: </CardText>
-            <CardText>Percent Chance Preceipitation: </CardText>
+            {/* For Each statement with templated list here */}
+            <ListGroup horizontal="lg">
+              <ListGroupItem>Sunday</ListGroupItem>
+              <ListGroupItem>Monday</ListGroupItem>
+              <ListGroupItem>Tuesday</ListGroupItem>
+              <ListGroupItem>Wednesday </ListGroupItem>
+              <ListGroupItem>Thursday</ListGroupItem>
+              <ListGroupItem>Friday</ListGroupItem>
+              <ListGroupItem>Saturday</ListGroupItem>
+            </ListGroup>
           </CardBody>
-          <Button onClick={() => dispatch(showFiveDay())}>Five Day Forecast</Button>
         </Card>
       </Container>
     </div>
   );
 };
-export default BasicDataView;
+export default FiveDayView;

@@ -30,10 +30,19 @@ const BasicDataView = () => {
           <CardHeader>
             <Row>
               <Col>
-                <CardTitle><h3>Searched Location</h3></CardTitle>
+                <CardTitle>
+                  <h3>
+                    location
+                  </h3>
+                </CardTitle>
               </Col>
               <Col>
-                <Button style={{float: "right"}} onClick={() => dispatch(hideBasicData())}>x</Button>
+                <Button
+                  style={{ float: "right" }}
+                  onClick={() => dispatch(hideBasicData())}
+                >
+                  x
+                </Button>
               </Col>
             </Row>
           </CardHeader>
@@ -43,7 +52,9 @@ const BasicDataView = () => {
             <CardText>Low: </CardText>
             <CardText>Percent Chance Preceipitation: </CardText>
           </CardBody>
-          <Button onClick={() => dispatch(showFiveDay())}>Five Day Forecast</Button>
+          <Button onClick={() => dispatch(showFiveDay())}>
+            Five Day Forecast
+          </Button>
         </Card>
       </Container>
     </div>

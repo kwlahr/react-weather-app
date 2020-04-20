@@ -5,6 +5,7 @@ import BasicDataView from "./components/BasicDataView/";
 import FiveDayView from "./components/FiveDayView/";
 import { Container, Row, Col } from "reactstrap";
 
+
 function App() {
   const basicData = useSelector((state) => state.basicData);
   const fiveDay = useSelector((state) => state.fiveDay);

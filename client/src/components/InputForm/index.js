@@ -14,6 +14,7 @@ import { hideBasicData } from "../../actions/hideBasicData";
 
 const InputForm = () => {
   const dispatch = useDispatch();
+  
   return (
     <div>
       <Container
@@ -26,27 +27,27 @@ const InputForm = () => {
         <Row form>
           <Col md={6}>
             <FormGroup>
-              <Label for="exampleCity">City</Label>
-              <Input type="text" name="city" id="exampleCity" />
+              <Label for="state">City</Label>
+              <Input type="text" name="city" id="city" />
             </FormGroup>
           </Col>
           <Col md={4}>
             <FormGroup>
-              <Label for="exampleState">State</Label>
-              <Input type="text" name="state" id="exampleState" />
-            </FormGroup>
-          </Col>
-          <Col md={2}>
-            <FormGroup>
-              <Label for="exampleZip">Zip</Label>
-              <Input type="text" name="zip" id="exampleZip" />
+              <Label for="state">State</Label>
+              <Input type="text" name="state" id="state" />
             </FormGroup>
           </Col>
         </Row>
-        <Button style={{marginRight: "1rem"}} onClick={() => dispatch(showBasicData())}>show</Button>
+        <Button
+          style={{ marginRight: "1rem" }}
+          onClick={() => dispatch(showBasicData())}
+        >
+          Search
+        </Button>
         <Button onClick={() => dispatch(hideBasicData())}>hide</Button>
       </Container>
     </div>
   );
 };
+
 export default InputForm;

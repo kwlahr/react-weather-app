@@ -11,10 +11,10 @@ import {
 import { useDispatch } from "react-redux";
 import { showBasicData } from "../../actions/showBasicData";
 import { hideBasicData } from "../../actions/hideBasicData";
+import { getBasicData } from "../../actions/getBasicData";
 
 const InputForm = () => {
   const dispatch = useDispatch();
-  
   return (
     <div>
       <Container
@@ -40,7 +40,9 @@ const InputForm = () => {
         </Row>
         <Button
           style={{ marginRight: "1rem" }}
-          onClick={() => dispatch(showBasicData())}
+          onClick={
+            (() => dispatch(showBasicData()), () => dispatch(getBasicData()))
+          }
         >
           Search
         </Button>

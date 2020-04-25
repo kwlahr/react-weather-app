@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   Card,
   CardHeader,
@@ -14,7 +14,7 @@ import {
 import { useDispatch } from "react-redux";
 import { hideFiveDay } from "../../actions/hideFiveDay";
 
-const FiveDayView = () => {
+function FiveDayView() {
   const dispatch = useDispatch();
   return (
     <div>
@@ -50,9 +50,7 @@ const FiveDayView = () => {
               <ListGroupItem style={{ margin: "1rem" }}>Sunday</ListGroupItem>
               <ListGroupItem style={{ margin: "1rem" }}>Monday</ListGroupItem>
               <ListGroupItem style={{ margin: "1rem" }}>Tuesday</ListGroupItem>
-              <ListGroupItem style={{ margin: "1rem" }}>
-                Wednesday{" "}
-              </ListGroupItem>
+              <ListGroupItem style={{ margin: "1rem" }}>Wednesday</ListGroupItem>
               <ListGroupItem style={{ margin: "1rem" }}>Thursday</ListGroupItem>
               <ListGroupItem style={{ margin: "1rem" }}>Friday</ListGroupItem>
               <ListGroupItem style={{ margin: "1rem" }}>Saturday</ListGroupItem>
@@ -62,5 +60,5 @@ const FiveDayView = () => {
       </Container>
     </div>
   );
-};
+}
 export default FiveDayView;

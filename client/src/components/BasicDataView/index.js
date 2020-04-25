@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   Card,
   CardHeader,
@@ -14,8 +14,15 @@ import { useDispatch } from "react-redux";
 import { hideBasicData } from "../../actions/hideBasicData";
 import { showFiveDay } from "../../actions/showFiveDay";
 
-const BasicDataView = () => {
+function BasicDataView() {
   const dispatch = useDispatch();
+  const city = "Denver";
+  const state = "Colorado";
+  const temp = "50";
+  const high = "60";
+  const low = "40";
+  const precip = "25";
+
   return (
     <div>
       <Container
@@ -32,7 +39,7 @@ const BasicDataView = () => {
               <Col>
                 <CardTitle>
                   <h3>
-                    location
+                    {city}, {state}
                   </h3>
                 </CardTitle>
               </Col>
@@ -47,10 +54,10 @@ const BasicDataView = () => {
             </Row>
           </CardHeader>
           <CardBody>
-            <CardText>Current Temp: </CardText>
-            <CardText>High: </CardText>
-            <CardText>Low: </CardText>
-            <CardText>Percent Chance Preceipitation: </CardText>
+            <CardText>Current Temp: {temp}&deg; </CardText>
+            <CardText>High: {high}&deg; </CardText>
+            <CardText>Low: {low}&deg; </CardText>
+            <CardText>Percent Chance Preceipitation: {precip}&#37; </CardText>
           </CardBody>
           <Button onClick={() => dispatch(showFiveDay())}>
             Five Day Forecast

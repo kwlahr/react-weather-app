@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   Button,
   Container,
@@ -13,8 +13,10 @@ import { showBasicData } from "../../actions/showBasicData";
 import { hideBasicData } from "../../actions/hideBasicData";
 import { getBasicData } from "../../actions/getBasicData";
 
-const InputForm = () => {
+function InputForm() {
   const dispatch = useDispatch();
+  // const City = document.getElementById("city").val();
+  // const State = document.getElementById("state").val();
   return (
     <div>
       <Container
@@ -28,21 +30,19 @@ const InputForm = () => {
           <Col md={6}>
             <FormGroup>
               <Label for="state">City</Label>
-              <Input type="text" name="city" id="city" />
+              <Input type="text" name="city" id="city" placeholder="City" />
             </FormGroup>
           </Col>
           <Col md={4}>
             <FormGroup>
               <Label for="state">State</Label>
-              <Input type="text" name="state" id="state" />
+              <Input type="text" name="state" id="state" placeholder="State" />
             </FormGroup>
           </Col>
         </Row>
         <Button
           style={{ marginRight: "1rem" }}
-          onClick={
-            (() => dispatch(showBasicData()), () => dispatch(getBasicData()))
-          }
+          onClick={(() => dispatch(showBasicData()))}
         >
           Search
         </Button>
@@ -50,6 +50,6 @@ const InputForm = () => {
       </Container>
     </div>
   );
-};
+}
 
 export default InputForm;

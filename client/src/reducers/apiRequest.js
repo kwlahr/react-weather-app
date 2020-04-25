@@ -1,11 +1,12 @@
 import axios from "axios";
+// import InputForm from "../components/InputForm";
 
-const City = () => {
-  document.getElementById("city").value();
-};
-const State = () => {
-  document.getElementById("state").value();
-};
+function City() {
+  return document.getElementById("city").val();
+}
+function State() {
+  return document.getElementById("state").val();
+}
 
 const apiRequestReducer = (state = {}, action) => {
   switch (action.type) {

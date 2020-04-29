@@ -6,6 +6,16 @@ import Weather from "./components/Weather";
 const API_key = "e118a9757bbd90e8cbd8a9d2eff8445f";
 
 class App extends React.Component {
+  state = {
+    city: undefined,
+    country: undefined,
+    temp: undefined,
+    min: undefined,
+    max: undefined,
+    humidity: undefined,
+    description: undefined,
+    error: undefined
+  }
   getWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
@@ -15,6 +25,16 @@ class App extends React.Component {
     );
     const data = await api_call.json();
     console.log(data);
+    this.setState({
+      city: data.name,
+      country: data.sys.country,
+      temp: data.main.temp,
+      min: data.main.temp_min,
+      max: data.main.temp_max,
+      humidity: data.main.humidity,
+      description: data.weather[0].description,
+      error: "" 
+    })
   };
 
   render() {

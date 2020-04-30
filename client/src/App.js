@@ -14,27 +14,40 @@ class App extends React.Component {
     max: undefined,
     humidity: undefined,
     description: undefined,
-    error: undefined
-  }
+    error: undefined,
+  };
   getWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
-    const state = e.target.elements.state.value;
+    const country = e.target.elements.country.value;
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${state}&units=imperial&appid=${API_key}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${API_key}`
     );
     const data = await api_call.json();
-    console.log(data);
-    this.setState({
-      city: data.name,
-      country: data.sys.country,
-      temp: data.main.temp,
-      min: data.main.temp_min,
-      max: data.main.temp_max,
-      humidity: data.main.humidity,
-      description: data.weather[0].description,
-      error: "" 
-    })
+    if (city && country) {
+      console.log(data);
+      this.setState({
+        city: data.name,
+        country: data.sys.country,
+        temp: data.main.temp,
+        min: data.main.temp_min,
+        max: data.main.temp_max,
+        humidity: data.main.humidity,
+        description: data.weather[0].description,
+        error: "",
+      });
+    } else {
+      this.setState({
+        city: undefined,
+        country: undefined,
+        temp: undefined,
+        min: undefined,
+        max: undefined,
+        humidity: undefined,
+        description: undefined,
+        error: "Please enter valid City and State or Country. Check spelling and don't use abbreviations for States.",
+      });
+    }
   };
 
   render() {
@@ -42,7 +55,7 @@ class App extends React.Component {
       <div>
         <Titles />
         <Form getWeather={this.getWeather} />
-        <Weather 
+        <Weather
           city={this.state.city}
           country={this.state.country}
           temp={this.state.temp}

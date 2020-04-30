@@ -38,10 +38,10 @@ const Weather = (props) => (
                 </CardTitle>
               </CardHeader>
               <CardBody>
-                <CardText>Current Temperature: {props.temp}</CardText>
-                <CardText>Min: {props.min}</CardText>
-                <CardText>Max: {props.max}</CardText>
-                <CardText>Humidity: {props.humidity}</CardText>
+                <CardText>Current Temperature: {props.temp}&deg;F</CardText>
+                <CardText>Min: {props.min}&deg;F</CardText>
+                <CardText>Max: {props.max}&deg;F</CardText>
+                <CardText>Humidity: {props.humidity}&#x25;</CardText>
                 <CardText>Conditions: {props.description}</CardText>
               </CardBody>
             </Card>

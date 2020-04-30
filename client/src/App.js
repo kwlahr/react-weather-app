@@ -29,9 +29,9 @@ class App extends React.Component {
       this.setState({
         city: data.name,
         country: data.sys.country,
-        temp: data.main.temp,
-        min: data.main.temp_min,
-        max: data.main.temp_max,
+        temp: data.main.temp.toFixed(0),
+        min: data.main.temp_min.toFixed(0),
+        max: data.main.temp_max.toFixed(0),
         humidity: data.main.humidity,
         description: data.weather[0].description,
         error: "",

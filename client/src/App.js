@@ -9,6 +9,7 @@ class App extends React.Component {
   state = {
     city: undefined,
     country: undefined,
+    iconURL: undefined,
     temp: undefined,
     min: undefined,
     max: undefined,
@@ -29,6 +30,7 @@ class App extends React.Component {
       this.setState({
         city: data.name,
         country: data.sys.country,
+        iconURL: `https://openweathermap.org/img/w/${data.weather[0].icon}.png`,
         temp: data.main.temp.toFixed(0),
         min: data.main.temp_min.toFixed(0),
         max: data.main.temp_max.toFixed(0),
@@ -40,6 +42,7 @@ class App extends React.Component {
       this.setState({
         city: undefined,
         country: undefined,
+        iconURL: undefined,
         temp: undefined,
         min: undefined,
         max: undefined,
@@ -55,7 +58,7 @@ class App extends React.Component {
     return (
       <div
         style={{
-          height: "65rem",
+          height: "75rem",
           backgroundColor: "#808080",
         }}
       >
@@ -64,6 +67,7 @@ class App extends React.Component {
         <Weather
           city={this.state.city}
           country={this.state.country}
+          iconURL={this.state.iconURL}
           temp={this.state.temp}
           min={this.state.min}
           max={this.state.max}

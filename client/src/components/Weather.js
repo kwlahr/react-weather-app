@@ -7,12 +7,14 @@ import {
   CardHeader,
   CardBody,
   CardText,
+  CardImg
 } from "reactstrap";
 
 const Weather = (props) => (
   <div>
     {props.city &&
       props.country &&
+      props.iconURL &&
       props.temp &&
       props.min &&
       props.max &&
@@ -38,6 +40,7 @@ const Weather = (props) => (
                 </CardTitle>
               </CardHeader>
               <CardBody>
+                <CardImg style={{width: "10rem", height: "auto"}} src={props.iconURL} alt="Weather Icon" />
                 <CardText>Current Temperature: {props.temp}&deg;F</CardText>
                 <CardText>Min: {props.min}&deg;F</CardText>
                 <CardText>Max: {props.max}&deg;F</CardText>

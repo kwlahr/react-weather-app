@@ -45,14 +45,20 @@ class App extends React.Component {
         max: undefined,
         humidity: undefined,
         description: undefined,
-        error: "Please enter valid City and State or Country. Check spelling and don't use abbreviations for States.",
+        error:
+          "Please enter valid City and State or Country. Check spelling and don't use abbreviations for States.",
       });
     }
   };
 
   render() {
     return (
-      <div>
+      <div
+        style={{
+          height: "65rem",
+          backgroundColor: "#808080",
+        }}
+      >
         <Titles />
         <SearchForm getWeather={this.getWeather} />
         <Weather
